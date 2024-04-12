@@ -1,91 +1,91 @@
 package coordenadas;
-
+ <br> 
 import java.util.Scanner;
-
+ <br> 
 public class Coordenadas {// inicio coordenadas
-
+ <br> 
     public static void main(String[] args) {// inicio main
+ <br> 
+        // NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA <br> 
+        Scanner scanner = new Scanner(System.in); <br> 
 
-        // NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA"); <br> 
 
-        System.out.println("NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA");
+        // Leer datos de las cooordenadas <br> 
+        System.out.println("Ingrese la coordenada x del vértice A: "); <br> 
+        int x1 = scanner.nextInt(); <br> 
+        System.out.println("Ingrese la coordenada y del vértice A: "); <br> 
+        int y1 = scanner.nextInt(); <br> 
 
-        // Leer datos de las cooordenadas
-        System.out.println("Ingrese la coordenada x del vértice A: ");
-        int x1 = scanner.nextInt();
-        System.out.println("Ingrese la coordenada y del vértice A: ");
-        int y1 = scanner.nextInt();
+        System.out.println("Ingrese la coordenada x del vértice B: "); <br> 
+        int x2 = scanner.nextInt(); <br> 
+        System.out.println("Ingrese la coordenada y del vértice B: "); <br> 
+        int y2 = scanner.nextInt(); <br> 
 
-        System.out.println("Ingrese la coordenada x del vértice B: ");
-        int x2 = scanner.nextInt();
-        System.out.println("Ingrese la coordenada y del vértice B: ");
-        int y2 = scanner.nextInt();
+        System.out.println("Ingrese la coordenada x del vértice C: "); <br> 
+        int x3 = scanner.nextInt(); <br> 
+        System.out.println("Ingrese la coordenada y del vértice C: "); <br> 
+        int y3 = scanner.nextInt(); <br> 
 
-        System.out.println("Ingrese la coordenada x del vértice C: ");
-        int x3 = scanner.nextInt();
-        System.out.println("Ingrese la coordenada y del vértice C: ");
-        int y3 = scanner.nextInt();
+        // Calcular cada lado del triángulo <br> 
+        double ladoAB = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)); <br> 
+        double ladoBC = Math.sqrt((x3 - x2) * (x3 - x2) + (y3 - y2) * (y3 - y2)); <br> 
+        double ladoCA = Math.sqrt((x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3)); <br> 
 
-        // Calcular cada lado del triángulo
-        double ladoAB = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-        double ladoBC = Math.sqrt((x3 - x2) * (x3 - x2) + (y3 - y2) * (y3 - y2));
-        double ladoCA = Math.sqrt((x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3));
-
-        // NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA
+        // NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA <br> 
         
-        // tipo de triángulo
-        String tipoTriangulo;
-        double area;
-        if (ladoAB == ladoBC && ladoBC == ladoCA) {
-            tipoTriangulo = "Equilátero";
+        // tipo de triángulo <br> 
+        String tipoTriangulo; <br> 
+        double area; <br> 
+        if (ladoAB == ladoBC && ladoBC == ladoCA) { <br> 
+            tipoTriangulo = "Equilátero"; <br> 
 
-            // Calcular el área del triángulo
-            double a = ladoCA / 2;
-            double altura = Math.sqrt((ladoAB * ladoAB) - (a * a));
-            area = (ladoCA * altura) / 2;
+            // Calcular el área del triángulo <br> 
+            double a = ladoCA / 2; <br> 
+            double altura = Math.sqrt((ladoAB * ladoAB) - (a * a)); <br> 
+            area = (ladoCA * altura) / 2; <br> 
 
-        } else if (ladoAB == ladoBC || ladoAB == ladoCA || ladoBC == ladoCA) {
-            tipoTriangulo = "Isósceles";
+        } else if (ladoAB == ladoBC || ladoAB == ladoCA || ladoBC == ladoCA) { <br> 
+            tipoTriangulo = "Isósceles"; <br> 
 
-            // Calcular el área del triángulo
-            double a = ladoCA / 2;
-            double altura = Math.sqrt((ladoAB * ladoAB) - (a * a));
-            area = (ladoCA * altura) / 2;
+            // Calcular el área del triángulo <br> 
+            double a = ladoCA / 2; <br> 
+            double altura = Math.sqrt((ladoAB * ladoAB) - (a * a));<br> 
+            area = (ladoCA * altura) / 2;<br> 
 
-        } else {
-            tipoTriangulo = "Escaleno";
-            // Calcular el área del triángulo
-            area = (ladoCA * ladoBC) / 2;
-        }
+        } else {<br> 
+            tipoTriangulo = "Escaleno";<br> 
+            // Calcular el área del triángulo <br> 
+            area = (ladoCA * ladoBC) / 2;<br> 
+        }<br> 
 
-        // Calcular el perímetro del triángulo
-        double perimetro = ladoAB + ladoBC + ladoCA;
+        // Calcular el perímetro del triángulo<br> 
+        double perimetro = ladoAB + ladoBC + ladoCA;<br> 
 
-        // NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA
+        // NOTA EL LADO CA ES LA BASE, LADO BC ES LA ALTURA Y LADO AB ES LA HIPOTENUSA<br> 
         
-        // Calcular los ángulos del triángulo usando la ley de los cosenos
-        double ladoA = ladoCA;
-        double ladoB = ladoBC;
-        double ladoC = ladoAB;
-        double anguloA = Math.toDegrees(Math.acos((ladoB * ladoB + ladoC * ladoC - ladoA * ladoA) / (2 * ladoB * ladoC)));
-        double anguloB = Math.toDegrees(Math.acos((ladoA * ladoA + ladoC * ladoC - ladoB * ladoB) / (2 * ladoA * ladoC)));
-        double anguloC = 180 - anguloA - anguloB;
+        // Calcular los ángulos del triángulo usando la ley de los cosenos<br> 
+        double ladoA = ladoCA;<br> 
+        double ladoB = ladoBC;<br> 
+        double ladoC = ladoAB;<br> 
+        double anguloA = Math.toDegrees(Math.acos((ladoB * ladoB + ladoC * ladoC - ladoA * ladoA) / (2 * ladoB * ladoC)));<br> 
+        double anguloB = Math.toDegrees(Math.acos((ladoA * ladoA + ladoC * ladoC - ladoB * ladoB) / (2 * ladoA * ladoC)));<br> 
+        double anguloC = 180 - anguloA - anguloB;<br> 
 
-        // Imprimir resultados 
-        System.out.println("-----------------------------------------------------------------------");
-        System.out.println("Las coordenadas del vertice A ingresadas fueron: x= " + x1 + " y= " + y1);
-        System.out.println("Las coordenadas del vertice B ingresadas fueron: x= " + x2 + " y= " + y2);
-        System.out.println("Las coordenadas del vertice C ingresadas fueron: x= " + x3 + " y= " + y3);
-        System.out.println("La distancia entre los vertices(Puntos) AB (hipotenusa)= " + ladoAB);
-        System.out.println("La distancia entre los vertices(Puntos) BC (Altura)= " + ladoBC);
-        System.out.println("La distancia entre los vertices(Puntos) AC3= " + ladoCA);
-        System.out.println("Esto representa que es un triangulo " + tipoTriangulo);
-        System.out.println("El perimetro del triangulo es de = " + perimetro);
-        System.out.println("El area del triangulo es de = " + area);
-        System.out.println("El angulos a= " + anguloA);
-        System.out.println("El angulos b= " + anguloB);
-        System.out.println("El angulos c= " + anguloC);
+        // Imprimir resultados <br> 
+        System.out.println("-----------------------------------------------------------------------");<br> 
+        System.out.println("Las coordenadas del vertice A ingresadas fueron: x= " + x1 + " y= " + y1);<br> 
+        System.out.println("Las coordenadas del vertice B ingresadas fueron: x= " + x2 + " y= " + y2);<br> 
+        System.out.println("Las coordenadas del vertice C ingresadas fueron: x= " + x3 + " y= " + y3);<br> 
+        System.out.println("La distancia entre los vertices(Puntos) AB (hipotenusa)= " + ladoAB);<br> 
+        System.out.println("La distancia entre los vertices(Puntos) BC (Altura)= " + ladoBC);<br> 
+        System.out.println("La distancia entre los vertices(Puntos) AC3= " + ladoCA);<br> 
+        System.out.println("Esto representa que es un triangulo " + tipoTriangulo);<br> 
+        System.out.println("El perimetro del triangulo es de = " + perimetro);<br> 
+        System.out.println("El area del triangulo es de = " + area);<br> 
+        System.out.println("El angulos a= " + anguloA);<br> 
+        System.out.println("El angulos b= " + anguloB);<br> 
+        System.out.println("El angulos c= " + anguloC);<br> 
 
     }//fin main   
 }// fin coorddenadas
